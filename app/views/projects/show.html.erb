@@ -9,5 +9,50 @@
   <%= @project.text %>
 </p>
 
+<h2>Logs</h2>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@project.errors.count, "error") %> prohibited
+        this log from being saved:
+      </h2>
+      <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% @project.logs.each do |log| %>
+  <p>
+    <strong><%= log.title %></strong>
+  </p>
+ 
+  <p>
+    <%= log.body %>
+  </p>
+  <p>
+    <%= link_to 'Destroy Log', [log.project, log],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
+<h2>Add a log:</h2>
+<%= form_for([@project, @project.logs.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

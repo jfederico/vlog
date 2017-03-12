@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312154754) do
+ActiveRecord::Schema.define(version: 20170312172726) do
+
+  create_table "logs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_logs_on_project_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
