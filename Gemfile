@@ -54,3 +54,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-sass', '~> 4.7'
+gem 'jquery-ui-rails'
+
+# WYSIWYG editor
+gem 'ckeditor', '4.2.4'

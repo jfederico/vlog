@@ -3,7 +3,7 @@
   <strong>Title:</strong>
   <%= @project.title %>
 </p>
- 
+
 <p>
   <strong>Text:</strong>
   <%= @project.text %>
@@ -28,7 +28,7 @@
   <p>
     <strong><%= log.title %></strong>
   </p>
- 
+
   <p>
     <%= log.body %>
   </p>
@@ -47,7 +47,7 @@
   </p>
   <p>
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.cktext_area :body %>
   </p>
   <p>
     <%= f.submit %>
