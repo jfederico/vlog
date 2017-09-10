@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  #get 'welcome/index'
+  #get 'creative/index'
   resources :projects do
     resources :logs
   end
 
-  root 'welcome#index'
+  root 'creative#index'
 end
