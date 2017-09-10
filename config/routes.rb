@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :logs
   end
 
-  root 'creative#index'
-  #root 'cleanblog#index'
+  #root 'creative#index'
+  root 'cleanblog#index'
 end
