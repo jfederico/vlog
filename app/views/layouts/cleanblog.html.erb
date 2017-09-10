@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="<%= @page_lang or "en" %>">
+    <head>
+        <title><%= @page_title or "Clean Blog - Start Bootstrap Theme" %></title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <!-- Custom Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Theme CSS -->
+        <link href="css/clean-blog.min.css" rel="stylesheet">
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body id="page-top">
+        <%= yield %>
+    </body>
+
+</html>
